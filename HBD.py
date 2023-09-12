@@ -37,6 +37,15 @@ elif selected == 'Happy Birthday':
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
     df_new_=df_new[['NAMA','PATRA','PJ']]
 
+    #FOR TOMMOROW 
+    date_time_str_lst=[]
+    date_time_str_next = now+ timedelta(days=1)
+    date_time_str_next = date_time_str_next.strftime('%m%d').lstrip('0')
+    df_new_1=df[df['Unique Code'].str.fullmatch(date_time_str_next)]
+    
+    #Using unique Code
+    df_new_1=df[df['Unique Code'].str.fullmatch(date_time_str_next)]
+    df_new_next=df_new_1[['NAMA','PATRA','PJ']]
 
     hide_dataframe_row_index = """
                 <style>
@@ -48,6 +57,13 @@ elif selected == 'Happy Birthday':
     # Inject CSS with Markdown
     st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
     st.table(df_new_)
+
+
+    st.header ('Ulang Tahun Besok')
+    st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
+    st.table(df_new_next)
+
+  
 
 
     st.header ('Guide Line HBD')
