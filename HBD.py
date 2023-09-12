@@ -32,7 +32,6 @@ elif selected == 'Happy Birthday':
     date_time_str = date_time_str.strftime('%m%d').lstrip('0')
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
 
-    
     st.header(now)
 
     #Using unique Code
@@ -76,22 +75,10 @@ elif selected == 'Happy Birthday':
     st.write( '[Taraksa Mahogra](https://drive.google.com/drive/folders/1k2bz8m01luw88IdfE1ryjpIKdWwnSQyxEkFFgK6TN2_7S_8q-gT1Ko4fNCygnlnLJbCZbLli)')
     st.write( '[Aquileo](https://drive.google.com/drive/folders/1mhpdPt4jmCbQuUPCLKTCV4637U2lRDdR2W3SJdvt2nIWRRV2y19XdljH1ukbpvKt5AnP4-3s)')
 
-    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAFpbr-v4lY/ZZJEjWNos6Hq4l2HU-lnNg/edit?utm_content=DAFpbr-v4lY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) ')
+    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAE8eLHUZlg/6Y-F-WagjzqZ2NRsX95axg/edit?analyticsCorrelationId=f764be0f-cae2-4c0d-8573-f05616b735fa) ')
     st.text('    Login pake canva premium biar gampang editnya')
     st.text('    Uname: serkainternal@gmail.com')
     st.text('    Password: serka2022')
     st.write( '5. Terus buat fun factnya, tanya temen deketnya ya. ')
     st.write( 'Untuk Temen deketnya bisa dicari disini: [ini linknya](https://canva.com)')
     st.text(' Kalau gaada disini bisa chat gw aja atau ketang nya di masing masing angkatan')
-
-
-
-
-
-
-
-
-
-
-
-
