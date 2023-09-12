@@ -28,7 +28,7 @@ elif selected == 'Happy Birthday':
 
     # convert to string
     date_time_str_lst=[]
-    date_time_str = now+ timedelta(days=1)
+    date_time_str = now+ timedelta(days=0)
     date_time_str = date_time_str.strftime('%m%d').lstrip('0')
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
 
