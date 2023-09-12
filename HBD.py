@@ -32,7 +32,6 @@ elif selected == 'Happy Birthday':
     date_time_str = date_time_str.strftime('%m%d').lstrip('0')
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
 
-    st.header(now)
 
     #Using unique Code
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
@@ -82,3 +81,15 @@ elif selected == 'Happy Birthday':
     st.write( '5. Terus buat fun factnya, tanya temen deketnya ya. ')
     st.write( 'Untuk Temen deketnya bisa dicari disini: [ini linknya](https://canva.com)')
     st.text(' Kalau gaada disini bisa chat gw aja atau ketang nya di masing masing angkatan')
+
+
+
+
+
+
+
+
+
+
+
+
