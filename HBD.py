@@ -32,7 +32,8 @@ elif selected == 'Happy Birthday':
     date_time_str = date_time_str.strftime('%m%d').lstrip('0')
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
 
-    st.header(date_time_str)
+    
+    st.header(now)
 
     #Using unique Code
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
