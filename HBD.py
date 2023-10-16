@@ -4,14 +4,19 @@ import streamlit as st
 import webbrowser
 import openpyxl
 from streamlit_option_menu import option_menu
+from PIL import Image
+
 
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Happy Birthday'], 
-        icons=['house', 'list-task'], menu_icon="cast", default_index=1)
+    selected = option_menu("Main Menu", ["Home", 'Happy Birthday','WOF'], 
+        icons=['house', 'list-task','list-task'], menu_icon="cast", default_index=1)
     selected
 
 if selected=='Home':
     st.title('WELCOME to SERKA HMTM "PATRA" ITB KOMISARIAT PAGE')
+    image=Image.open('serka.jpg')
+    st.image(image, caption='inilah kami SERKA')
+
 
 elif selected == 'Happy Birthday':
     st.title('HBD HMTM PATRA KOMISARIAT')
@@ -63,8 +68,6 @@ elif selected == 'Happy Birthday':
     st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
     st.table(df_new_next)
 
-  
-
 
     st.header ('Guide Line HBD')
     st.text('1. Buka google calendar dan atau lihat pembagian HBDan di web ini')
@@ -74,7 +77,7 @@ elif selected == 'Happy Birthday':
     st.write( '[Taraksa Mahogra](https://drive.google.com/drive/folders/1k2bz8m01luw88IdfE1ryjpIKdWwnSQyxEkFFgK6TN2_7S_8q-gT1Ko4fNCygnlnLJbCZbLli)')
     st.write( '[Aquileo](https://drive.google.com/drive/folders/1mhpdPt4jmCbQuUPCLKTCV4637U2lRDdR2W3SJdvt2nIWRRV2y19XdljH1ukbpvKt5AnP4-3s)')
 
-    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAFpbr-v4lY/ZZJEjWNos6Hq4l2HU-lnNg/edit?utm_content=DAFpbr-v4lY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) ')
+    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAE8eLHUZlg/6Y-F-WagjzqZ2NRsX95axg/edit?analyticsCorrelationId=f764be0f-cae2-4c0d-8573-f05616b735fa) ')
     st.text('    Login pake canva premium biar gampang editnya')
     st.text('    Uname: serkainternal@gmail.com')
     st.text('    Password: serka2022')
@@ -84,7 +87,41 @@ elif selected == 'Happy Birthday':
 
 
 
+elif selected == 'WOF':
 
+    dict_WOF={
+        'Nama':['Putri', 'Niso', 'Zuhdy', 'Najwa'],
+        'Kuartal': ['Kuartal 1','Kuartal 2', 'Kuartal 3', 'Kuartal 4']
+    }
+
+    df_WOF=pd.DataFrame(dict_WOF)
+
+    hide_dataframe_row_index = """
+                <style>
+                .row_heading.level0 {display:none}
+                .blank {display:none}
+                </style>
+                """
+
+    # Inject CSS with Markdown
+    st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
+
+
+    st.title('WALL OF FAME PATRA')
+    st.table(df_WOF)
+    st.text('1. Lihat link nya disini')
+    st.write( '[WOF LINK]()')
+    st.text('2. Buat dan masukkan Nama nama dari link diatas')
+    st.text('FOTO FOTO ANGKATAN')
+    st.write( '[Taraksa Mahogra](https://drive.google.com/drive/folders/1k2bz8m01luw88IdfE1ryjpIKdWwnSQyxEkFFgK6TN2_7S_8q-gT1Ko4fNCygnlnLJbCZbLli)')
+    st.write( '[Aquileo](https://drive.google.com/drive/folders/1mhpdPt4jmCbQuUPCLKTCV4637U2lRDdR2W3SJdvt2nIWRRV2y19XdljH1ukbpvKt5AnP4-3s)')
+    st.text('2. Masukkan Data data diatas kedalam link canva dibawah')
+    st.write( '[WOF LINK CANVA POST](https://www.canva.com/design/DAFsMI_hA8s/zG2HkGza0rfjOXcY6AFgMA/edit)')
+    st.write( '[WOF LINK CANVA PRINT](https://www.canva.com/design/DAFt0DiVXEs/xQSWMnG0-P2H90pWb10-Gw/edit)')
+    st.write('3. Untuk Publikasi chat ke Tiara yaa')
+
+
+        
 
 
 
