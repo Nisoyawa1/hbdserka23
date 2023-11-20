@@ -22,10 +22,10 @@ elif selected == 'Happy Birthday':
     st.title('HBD HMTM PATRA KOMISARIAT')
     st.header ('Ulang Tahun Hari Ini')
     #Read data
-    df=pd.read_excel('HBD.xlsx')
+    df=pd.read_excel('HBD_20_21_22.xlsx')
 
 
-    df=df[['NAMA','PATRA','PJ','Unique Code']]
+    df=df[['NAMA','PATRA','PJ','Unique Code','Foto Diri']]
     df=df.applymap(str)
 
     # current dateTime
@@ -40,7 +40,7 @@ elif selected == 'Happy Birthday':
 
     #Using unique Code
     df_new=df[df['Unique Code'].str.fullmatch(date_time_str)]
-    df_new_=df_new[['NAMA','PATRA','PJ']]
+    df_new_=df_new[['NAMA','PATRA','PJ','Foto Diri']]
 
     #FOR TOMMOROW 
     date_time_str_lst=[]
@@ -77,7 +77,7 @@ elif selected == 'Happy Birthday':
     st.write( '[Taraksa Mahogra](https://drive.google.com/drive/folders/1k2bz8m01luw88IdfE1ryjpIKdWwnSQyxEkFFgK6TN2_7S_8q-gT1Ko4fNCygnlnLJbCZbLli)')
     st.write( '[Aquileo](https://drive.google.com/drive/folders/1mhpdPt4jmCbQuUPCLKTCV4637U2lRDdR2W3SJdvt2nIWRRV2y19XdljH1ukbpvKt5AnP4-3s)')
 
-    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAFpbr-v4lY/ZZJEjWNos6Hq4l2HU-lnNg/edit?utm_content=DAFpbr-v4lY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) ')
+    st.write('4. Edit foto pake canva aja biar gampang, [ini linknya](https://www.canva.com/design/DAE8eLHUZlg/6Y-F-WagjzqZ2NRsX95axg/edit?analyticsCorrelationId=f764be0f-cae2-4c0d-8573-f05616b735fa) ')
     st.text('    Login pake canva premium biar gampang editnya')
     st.text('    Uname: serkainternal@gmail.com')
     st.text('    Password: serka2022')
@@ -91,7 +91,7 @@ elif selected == 'WOF':
 
     dict_WOF={
         'Nama':['Putri', 'Niso', 'Zuhdy', 'Najwa'],
-        'Kuartal': ['Kuartal 1','Kuartal 2', 'Kuartal 3', 'Kuartal 4']
+        'Kuartal': ['Kuartal','Kuartal 2', 'Kuartal 3', 'Kuartal 4']
     }
 
     df_WOF=pd.DataFrame(dict_WOF)
