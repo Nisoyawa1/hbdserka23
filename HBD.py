@@ -22,7 +22,7 @@ elif selected == 'Happy Birthday':
     st.title('HBD HMTM PATRA KOMISARIAT')
     st.header ('Ulang Tahun Hari Ini')
     #Read data
-    df=pd.read_excel('HBD_20_21_22.xlsx')
+    df=pd.read_excel('HBD_20_21_22_FIX.xlsx')
 
 
     df=df[['NAMA','PATRA','PJ','Unique Code','Foto Diri']]
