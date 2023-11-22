@@ -8,8 +8,8 @@ from PIL import Image
 
 
 with st.sidebar:
-    selected = option_menu("Main Menu", ["Home", 'Happy Birthday','WOF'], 
-        icons=['house', 'list-task','list-task'], menu_icon="cast", default_index=1)
+    selected = option_menu("Main Menu", ["Home", 'Happy Birthday','WOF','PMS'], 
+        icons=['house', 'list-task','list-task','list-task'], menu_icon="cast", default_index=1)
     selected
 
 if selected=='Home':
@@ -120,13 +120,54 @@ elif selected == 'WOF':
     st.write( '[WOF LINK CANVA PRINT](https://www.canva.com/design/DAFt0DiVXEs/xQSWMnG0-P2H90pWb10-Gw/edit)')
     st.write('3. Untuk Publikasi chat ke Tiara yaa')
 
+elif selected =='PMS':
+    st.title('WALL OF FAME PATRA')
+    import pandas as pd
+    from datetime import datetime, timedelta
 
-        
+    # Assuming you have imported streamlit as st and have set up the 'df_pms' DataFrame
 
+    # Read Excel file
+    df_pms = pd.read_excel('Pembagian.xlsx')
 
+    # Current dateTime
+    now = datetime.now()
+    # Convert to string
+    date_time_str = (now + timedelta(days=0)).strftime('%m%d').lstrip('0')
 
+    # Convert 'Unique Code' column to string
+    df_pms['Unique Code'] = df_pms['Unique Code'].astype(str)
 
+    # Filter the DataFrame using str.fullmatch()
+    df_new_pms = df_pms[df_pms['Unique Code'].str.fullmatch(date_time_str)]
 
+    # Display the filtered DataFrame
+    st.write(df_new_pms)
 
+    hide_dataframe_row_index = """
+                <style>
+                .row_heading.level0 {display:none}
+                .blank {display:none}
+                </style>
+                """
 
+    # Inject CSS with Markdown
+    st.markdown(hide_dataframe_row_index, unsafe_allow_html=True)
 
+    st.title( 'Guideline')
+    st.write( '[Link Google Drive](https://bit.ly/PATRAMudaShowcase)')
+    st.write('Caption')
+    st.write('𝗣𝗔𝗧𝗥𝗔 𝗠𝗨𝗗𝗔 𝗦𝗛𝗢𝗪𝗖𝗔𝗦𝗘')
+    st.write('Haiii massa Komisariat HMTM ""PATRA"" ITB 🙌')
+    st.write("Berhubung kemarin PATRA '22 telah membuat video perkenalan 🤩 berikut merupakan video perkenalan oleh:")
+    st.write("1. Muhammad Reza Muhtadi (PATRA222113)")
+    st.write("2. Fadli Ahmad Fadillah (PATRA222114)")
+    st.write("Raka pakai bikini 😲 Sambil berjemur di arab dan phukat 🤔 Semoga melalui video ini ☺️ Kita semua jadi lebih akrab dan dekat 😉")
+    st.write("~~ 𝘴𝘦𝘭𝘢𝘮𝘢𝘵 𝘮𝘦𝘯𝘰𝘯𝘵𝘰𝘯  ~~")
+    st.write("Uji coba terlebih dahulu bot : //PATRAMudaShowcase pada grup Cerelation")
+
+    st.write('Kalau susah copy caption silakan buka notes grup')
+    
+
+  
+    
